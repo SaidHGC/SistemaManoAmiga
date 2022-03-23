@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cc992b86007a4a8a832e52e30aaa9cf6" Name="Diagram1">
+        <EntityTypeShape EntityType="ManoAmigaModel.EmpCatCede" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManoAmigaModel.EmpCatEmpleado" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManoAmigaModel.EmpCatLicencia" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManoAmigaModel.EmpCatPuesto" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManoAmigaModel.EmpCatSexo" Width="1.5" PointX="0.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManoAmigaModel.EmpCatStatus" Width="1.5" PointX="0.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManoAmigaModel.Empleado" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManoAmigaModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManoAmigaModel.UniCatAgencia" Width="1.5" PointX="5.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManoAmigaModel.UniCatDisponibilidad" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManoAmigaModel.UniCatEdoAgencia" Width="1.5" PointX="5.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManoAmigaModel.UniCatTipoUnidad" Width="1.5" PointX="5.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManoAmigaModel.Unidades" Width="1.5" PointX="8" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManoAmigaModel.Usuario" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <AssociationConnector Association="ManoAmigaModel.FK_Empleado_EmpCatCede" ManuallyRouted="false" />
+        <AssociationConnector Association="ManoAmigaModel.FK_Empleado_EmpCatEmpleado" ManuallyRouted="false" />
+        <AssociationConnector Association="ManoAmigaModel.FK_Empleado_EmpCatLicencia" ManuallyRouted="false" />
+        <AssociationConnector Association="ManoAmigaModel.FK_Empleado_EmpCatPuesto" ManuallyRouted="false" />
+        <AssociationConnector Association="ManoAmigaModel.FK_Empleado_EmpCatSexo" ManuallyRouted="false" />
+        <AssociationConnector Association="ManoAmigaModel.FK_Empleado_EmpCatStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="ManoAmigaModel.FK_Usuario_Empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="ManoAmigaModel.FK_Unidades_UniCatAgencia" ManuallyRouted="false" />
+        <AssociationConnector Association="ManoAmigaModel.FK_Unidades_UniCatDisponibilidad" ManuallyRouted="false" />
+        <AssociationConnector Association="ManoAmigaModel.FK_Unidades_UniCatEdoAgencia" ManuallyRouted="false" />
+        <AssociationConnector Association="ManoAmigaModel.FK_Unidades_UniCatTipoUnidad" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

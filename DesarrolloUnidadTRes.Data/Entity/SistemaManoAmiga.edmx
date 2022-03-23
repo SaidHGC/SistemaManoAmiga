@@ -1,0 +1,861 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ManoAmigaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EmpCatCede">
+          <Key>
+            <PropertyRef Name="idCede" />
+          </Key>
+          <Property Name="idCede" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="strValor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="strDescripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EmpCatEmpleado">
+          <Key>
+            <PropertyRef Name="idEmpleado" />
+          </Key>
+          <Property Name="idEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="strValor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="strDescripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EmpCatLicencia">
+          <Key>
+            <PropertyRef Name="idLicencia" />
+          </Key>
+          <Property Name="idLicencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="strValor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="strDescripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EmpCatPuesto">
+          <Key>
+            <PropertyRef Name="idPuesto" />
+          </Key>
+          <Property Name="idPuesto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="strValor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="strDescripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EmpCatSexo">
+          <Key>
+            <PropertyRef Name="idSexo" />
+          </Key>
+          <Property Name="idSexo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="strValor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="strDescripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EmpCatStatus">
+          <Key>
+            <PropertyRef Name="idStatus" />
+          </Key>
+          <Property Name="idStatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="strValor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="strDescripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idCatEmpleado" Type="int" Nullable="false" />
+          <Property Name="strNombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="strApPaterno" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="strApMaterno" Type="varchar" MaxLength="50" />
+          <Property Name="dteFechaContratacion" Type="date" />
+          <Property Name="idCatCede" Type="int" Nullable="false" />
+          <Property Name="idCatSexo" Type="int" Nullable="false" />
+          <Property Name="idCatStatus" Type="int" Nullable="false" />
+          <Property Name="idCatPuesto" Type="int" Nullable="false" />
+          <Property Name="boolCapacitaciones" Type="bit" />
+          <Property Name="boolAntescedentes" Type="bit" />
+          <Property Name="boolINE" Type="bit" />
+          <Property Name="boolCurp" Type="bit" />
+          <Property Name="boolLicencia" Type="bit" />
+          <Property Name="idCatLicencia" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="UniCatAgencia">
+          <Key>
+            <PropertyRef Name="idAseguradora" />
+          </Key>
+          <Property Name="idAseguradora" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="strValor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="strDescripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UniCatDisponibilidad">
+          <Key>
+            <PropertyRef Name="idDisponibilidad" />
+          </Key>
+          <Property Name="idDisponibilidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="strValor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="strDescripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UniCatEdoAgencia">
+          <Key>
+            <PropertyRef Name="idEstadoAgencia" />
+          </Key>
+          <Property Name="idEstadoAgencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="strValor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="strDescripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UniCatTipoUnidad">
+          <Key>
+            <PropertyRef Name="idTipoUnidad" />
+          </Key>
+          <Property Name="idTipoUnidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="strValor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="strDescripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Unidades">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="straNoPlacas" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="strModelo" Type="varchar" MaxLength="50" />
+          <Property Name="strMarca" Type="varchar" MaxLength="50" />
+          <Property Name="idCatTipoUnidad" Type="int" Nullable="false" />
+          <Property Name="idCatEdoAgencia" Type="int" Nullable="false" />
+          <Property Name="idCatAseguradora" Type="int" Nullable="false" />
+          <Property Name="idCatDisponibilidad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idEmpleado" Type="int" />
+          <Property Name="strNombreUsuario" Type="varchar" MaxLength="30" />
+          <Property Name="strPassword" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK_Empleado_EmpCatCede">
+          <End Role="EmpCatCede" Type="Self.EmpCatCede" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpCatCede">
+              <PropertyRef Name="idCede" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="idCatCede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_EmpCatEmpleado">
+          <End Role="EmpCatEmpleado" Type="Self.EmpCatEmpleado" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpCatEmpleado">
+              <PropertyRef Name="idEmpleado" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="idCatEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_EmpCatLicencia">
+          <End Role="EmpCatLicencia" Type="Self.EmpCatLicencia" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpCatLicencia">
+              <PropertyRef Name="idLicencia" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="idCatLicencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_EmpCatPuesto">
+          <End Role="EmpCatPuesto" Type="Self.EmpCatPuesto" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpCatPuesto">
+              <PropertyRef Name="idPuesto" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="idCatPuesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_EmpCatSexo">
+          <End Role="EmpCatSexo" Type="Self.EmpCatSexo" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpCatSexo">
+              <PropertyRef Name="idSexo" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="idCatSexo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_EmpCatStatus">
+          <End Role="EmpCatStatus" Type="Self.EmpCatStatus" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpCatStatus">
+              <PropertyRef Name="idStatus" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="idCatStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Unidades_UniCatAgencia">
+          <End Role="UniCatAgencia" Type="Self.UniCatAgencia" Multiplicity="1" />
+          <End Role="Unidades" Type="Self.Unidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UniCatAgencia">
+              <PropertyRef Name="idAseguradora" />
+            </Principal>
+            <Dependent Role="Unidades">
+              <PropertyRef Name="idCatAseguradora" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Unidades_UniCatDisponibilidad">
+          <End Role="UniCatDisponibilidad" Type="Self.UniCatDisponibilidad" Multiplicity="1" />
+          <End Role="Unidades" Type="Self.Unidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UniCatDisponibilidad">
+              <PropertyRef Name="idDisponibilidad" />
+            </Principal>
+            <Dependent Role="Unidades">
+              <PropertyRef Name="idCatDisponibilidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Unidades_UniCatEdoAgencia">
+          <End Role="UniCatEdoAgencia" Type="Self.UniCatEdoAgencia" Multiplicity="1" />
+          <End Role="Unidades" Type="Self.Unidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UniCatEdoAgencia">
+              <PropertyRef Name="idEstadoAgencia" />
+            </Principal>
+            <Dependent Role="Unidades">
+              <PropertyRef Name="idCatEdoAgencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Unidades_UniCatTipoUnidad">
+          <End Role="UniCatTipoUnidad" Type="Self.UniCatTipoUnidad" Multiplicity="1" />
+          <End Role="Unidades" Type="Self.Unidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UniCatTipoUnidad">
+              <PropertyRef Name="idTipoUnidad" />
+            </Principal>
+            <Dependent Role="Unidades">
+              <PropertyRef Name="idCatTipoUnidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Empleado">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="idEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ManoAmigaModelStoreContainer">
+          <EntitySet Name="EmpCatCede" EntityType="Self.EmpCatCede" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmpCatEmpleado" EntityType="Self.EmpCatEmpleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmpCatLicencia" EntityType="Self.EmpCatLicencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmpCatPuesto" EntityType="Self.EmpCatPuesto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmpCatSexo" EntityType="Self.EmpCatSexo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmpCatStatus" EntityType="Self.EmpCatStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UniCatAgencia" EntityType="Self.UniCatAgencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UniCatDisponibilidad" EntityType="Self.UniCatDisponibilidad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UniCatEdoAgencia" EntityType="Self.UniCatEdoAgencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UniCatTipoUnidad" EntityType="Self.UniCatTipoUnidad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Unidades" EntityType="Self.Unidades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Empleado_EmpCatCede" Association="Self.FK_Empleado_EmpCatCede">
+            <End Role="EmpCatCede" EntitySet="EmpCatCede" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_EmpCatEmpleado" Association="Self.FK_Empleado_EmpCatEmpleado">
+            <End Role="EmpCatEmpleado" EntitySet="EmpCatEmpleado" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_EmpCatLicencia" Association="Self.FK_Empleado_EmpCatLicencia">
+            <End Role="EmpCatLicencia" EntitySet="EmpCatLicencia" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_EmpCatPuesto" Association="Self.FK_Empleado_EmpCatPuesto">
+            <End Role="EmpCatPuesto" EntitySet="EmpCatPuesto" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_EmpCatSexo" Association="Self.FK_Empleado_EmpCatSexo">
+            <End Role="EmpCatSexo" EntitySet="EmpCatSexo" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_EmpCatStatus" Association="Self.FK_Empleado_EmpCatStatus">
+            <End Role="EmpCatStatus" EntitySet="EmpCatStatus" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Unidades_UniCatAgencia" Association="Self.FK_Unidades_UniCatAgencia">
+            <End Role="UniCatAgencia" EntitySet="UniCatAgencia" />
+            <End Role="Unidades" EntitySet="Unidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Unidades_UniCatDisponibilidad" Association="Self.FK_Unidades_UniCatDisponibilidad">
+            <End Role="UniCatDisponibilidad" EntitySet="UniCatDisponibilidad" />
+            <End Role="Unidades" EntitySet="Unidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Unidades_UniCatEdoAgencia" Association="Self.FK_Unidades_UniCatEdoAgencia">
+            <End Role="UniCatEdoAgencia" EntitySet="UniCatEdoAgencia" />
+            <End Role="Unidades" EntitySet="Unidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Unidades_UniCatTipoUnidad" Association="Self.FK_Unidades_UniCatTipoUnidad">
+            <End Role="UniCatTipoUnidad" EntitySet="UniCatTipoUnidad" />
+            <End Role="Unidades" EntitySet="Unidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Empleado" Association="Self.FK_Usuario_Empleado">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ManoAmigaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="EmpCatCede">
+          <Key>
+            <PropertyRef Name="idCede" />
+          </Key>
+          <Property Name="idCede" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="strValor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="strDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK_Empleado_EmpCatCede" FromRole="EmpCatCede" ToRole="Empleado" />
+        </EntityType>
+        <EntityType Name="EmpCatEmpleado">
+          <Key>
+            <PropertyRef Name="idEmpleado" />
+          </Key>
+          <Property Name="idEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="strValor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="strDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK_Empleado_EmpCatEmpleado" FromRole="EmpCatEmpleado" ToRole="Empleado" />
+        </EntityType>
+        <EntityType Name="EmpCatLicencia">
+          <Key>
+            <PropertyRef Name="idLicencia" />
+          </Key>
+          <Property Name="idLicencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="strValor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="strDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK_Empleado_EmpCatLicencia" FromRole="EmpCatLicencia" ToRole="Empleado" />
+        </EntityType>
+        <EntityType Name="EmpCatPuesto">
+          <Key>
+            <PropertyRef Name="idPuesto" />
+          </Key>
+          <Property Name="idPuesto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="strValor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="strDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK_Empleado_EmpCatPuesto" FromRole="EmpCatPuesto" ToRole="Empleado" />
+        </EntityType>
+        <EntityType Name="EmpCatSexo">
+          <Key>
+            <PropertyRef Name="idSexo" />
+          </Key>
+          <Property Name="idSexo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="strValor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="strDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK_Empleado_EmpCatSexo" FromRole="EmpCatSexo" ToRole="Empleado" />
+        </EntityType>
+        <EntityType Name="EmpCatStatus">
+          <Key>
+            <PropertyRef Name="idStatus" />
+          </Key>
+          <Property Name="idStatus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="strValor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="strDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK_Empleado_EmpCatStatus" FromRole="EmpCatStatus" ToRole="Empleado" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idCatEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="strNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="strApPaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="strApMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dteFechaContratacion" Type="DateTime" Precision="0" />
+          <Property Name="idCatCede" Type="Int32" Nullable="false" />
+          <Property Name="idCatSexo" Type="Int32" Nullable="false" />
+          <Property Name="idCatStatus" Type="Int32" Nullable="false" />
+          <Property Name="idCatPuesto" Type="Int32" Nullable="false" />
+          <Property Name="boolCapacitaciones" Type="Boolean" />
+          <Property Name="boolAntescedentes" Type="Boolean" />
+          <Property Name="boolINE" Type="Boolean" />
+          <Property Name="boolCurp" Type="Boolean" />
+          <Property Name="boolLicencia" Type="Boolean" />
+          <Property Name="idCatLicencia" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EmpCatCede" Relationship="Self.FK_Empleado_EmpCatCede" FromRole="Empleado" ToRole="EmpCatCede" />
+          <NavigationProperty Name="EmpCatEmpleado" Relationship="Self.FK_Empleado_EmpCatEmpleado" FromRole="Empleado" ToRole="EmpCatEmpleado" />
+          <NavigationProperty Name="EmpCatLicencia" Relationship="Self.FK_Empleado_EmpCatLicencia" FromRole="Empleado" ToRole="EmpCatLicencia" />
+          <NavigationProperty Name="EmpCatPuesto" Relationship="Self.FK_Empleado_EmpCatPuesto" FromRole="Empleado" ToRole="EmpCatPuesto" />
+          <NavigationProperty Name="EmpCatSexo" Relationship="Self.FK_Empleado_EmpCatSexo" FromRole="Empleado" ToRole="EmpCatSexo" />
+          <NavigationProperty Name="EmpCatStatus" Relationship="Self.FK_Empleado_EmpCatStatus" FromRole="Empleado" ToRole="EmpCatStatus" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_Usuario_Empleado" FromRole="Empleado" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="UniCatAgencia">
+          <Key>
+            <PropertyRef Name="idAseguradora" />
+          </Key>
+          <Property Name="idAseguradora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="strValor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="strDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Unidades" Relationship="Self.FK_Unidades_UniCatAgencia" FromRole="UniCatAgencia" ToRole="Unidades" />
+        </EntityType>
+        <EntityType Name="UniCatDisponibilidad">
+          <Key>
+            <PropertyRef Name="idDisponibilidad" />
+          </Key>
+          <Property Name="idDisponibilidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="strValor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="strDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Unidades" Relationship="Self.FK_Unidades_UniCatDisponibilidad" FromRole="UniCatDisponibilidad" ToRole="Unidades" />
+        </EntityType>
+        <EntityType Name="UniCatEdoAgencia">
+          <Key>
+            <PropertyRef Name="idEstadoAgencia" />
+          </Key>
+          <Property Name="idEstadoAgencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="strValor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="strDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Unidades" Relationship="Self.FK_Unidades_UniCatEdoAgencia" FromRole="UniCatEdoAgencia" ToRole="Unidades" />
+        </EntityType>
+        <EntityType Name="UniCatTipoUnidad">
+          <Key>
+            <PropertyRef Name="idTipoUnidad" />
+          </Key>
+          <Property Name="idTipoUnidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="strValor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="strDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Unidades" Relationship="Self.FK_Unidades_UniCatTipoUnidad" FromRole="UniCatTipoUnidad" ToRole="Unidades" />
+        </EntityType>
+        <EntityType Name="Unidades">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="straNoPlacas" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="strModelo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="strMarca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idCatTipoUnidad" Type="Int32" Nullable="false" />
+          <Property Name="idCatEdoAgencia" Type="Int32" Nullable="false" />
+          <Property Name="idCatAseguradora" Type="Int32" Nullable="false" />
+          <Property Name="idCatDisponibilidad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UniCatAgencia" Relationship="Self.FK_Unidades_UniCatAgencia" FromRole="Unidades" ToRole="UniCatAgencia" />
+          <NavigationProperty Name="UniCatDisponibilidad" Relationship="Self.FK_Unidades_UniCatDisponibilidad" FromRole="Unidades" ToRole="UniCatDisponibilidad" />
+          <NavigationProperty Name="UniCatEdoAgencia" Relationship="Self.FK_Unidades_UniCatEdoAgencia" FromRole="Unidades" ToRole="UniCatEdoAgencia" />
+          <NavigationProperty Name="UniCatTipoUnidad" Relationship="Self.FK_Unidades_UniCatTipoUnidad" FromRole="Unidades" ToRole="UniCatTipoUnidad" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idEmpleado" Type="Int32" />
+          <Property Name="strNombreUsuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="strPassword" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK_Usuario_Empleado" FromRole="Usuario" ToRole="Empleado" />
+        </EntityType>
+        <Association Name="FK_Empleado_EmpCatCede">
+          <End Role="EmpCatCede" Type="Self.EmpCatCede" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpCatCede">
+              <PropertyRef Name="idCede" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="idCatCede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_EmpCatEmpleado">
+          <End Role="EmpCatEmpleado" Type="Self.EmpCatEmpleado" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpCatEmpleado">
+              <PropertyRef Name="idEmpleado" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="idCatEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_EmpCatLicencia">
+          <End Role="EmpCatLicencia" Type="Self.EmpCatLicencia" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpCatLicencia">
+              <PropertyRef Name="idLicencia" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="idCatLicencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_EmpCatPuesto">
+          <End Role="EmpCatPuesto" Type="Self.EmpCatPuesto" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpCatPuesto">
+              <PropertyRef Name="idPuesto" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="idCatPuesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_EmpCatSexo">
+          <End Role="EmpCatSexo" Type="Self.EmpCatSexo" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpCatSexo">
+              <PropertyRef Name="idSexo" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="idCatSexo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_EmpCatStatus">
+          <End Role="EmpCatStatus" Type="Self.EmpCatStatus" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpCatStatus">
+              <PropertyRef Name="idStatus" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="idCatStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Empleado">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="idEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Unidades_UniCatAgencia">
+          <End Role="UniCatAgencia" Type="Self.UniCatAgencia" Multiplicity="1" />
+          <End Role="Unidades" Type="Self.Unidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UniCatAgencia">
+              <PropertyRef Name="idAseguradora" />
+            </Principal>
+            <Dependent Role="Unidades">
+              <PropertyRef Name="idCatAseguradora" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Unidades_UniCatDisponibilidad">
+          <End Role="UniCatDisponibilidad" Type="Self.UniCatDisponibilidad" Multiplicity="1" />
+          <End Role="Unidades" Type="Self.Unidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UniCatDisponibilidad">
+              <PropertyRef Name="idDisponibilidad" />
+            </Principal>
+            <Dependent Role="Unidades">
+              <PropertyRef Name="idCatDisponibilidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Unidades_UniCatEdoAgencia">
+          <End Role="UniCatEdoAgencia" Type="Self.UniCatEdoAgencia" Multiplicity="1" />
+          <End Role="Unidades" Type="Self.Unidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UniCatEdoAgencia">
+              <PropertyRef Name="idEstadoAgencia" />
+            </Principal>
+            <Dependent Role="Unidades">
+              <PropertyRef Name="idCatEdoAgencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Unidades_UniCatTipoUnidad">
+          <End Role="UniCatTipoUnidad" Type="Self.UniCatTipoUnidad" Multiplicity="1" />
+          <End Role="Unidades" Type="Self.Unidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UniCatTipoUnidad">
+              <PropertyRef Name="idTipoUnidad" />
+            </Principal>
+            <Dependent Role="Unidades">
+              <PropertyRef Name="idCatTipoUnidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ManoAmigaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EmpCatCede" EntityType="Self.EmpCatCede" />
+          <EntitySet Name="EmpCatEmpleado" EntityType="Self.EmpCatEmpleado" />
+          <EntitySet Name="EmpCatLicencia" EntityType="Self.EmpCatLicencia" />
+          <EntitySet Name="EmpCatPuesto" EntityType="Self.EmpCatPuesto" />
+          <EntitySet Name="EmpCatSexo" EntityType="Self.EmpCatSexo" />
+          <EntitySet Name="EmpCatStatus" EntityType="Self.EmpCatStatus" />
+          <EntitySet Name="Empleado" EntityType="Self.Empleado" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="UniCatAgencia" EntityType="Self.UniCatAgencia" />
+          <EntitySet Name="UniCatDisponibilidad" EntityType="Self.UniCatDisponibilidad" />
+          <EntitySet Name="UniCatEdoAgencia" EntityType="Self.UniCatEdoAgencia" />
+          <EntitySet Name="UniCatTipoUnidad" EntityType="Self.UniCatTipoUnidad" />
+          <EntitySet Name="Unidades" EntityType="Self.Unidades" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK_Empleado_EmpCatCede" Association="Self.FK_Empleado_EmpCatCede">
+            <End Role="EmpCatCede" EntitySet="EmpCatCede" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_EmpCatEmpleado" Association="Self.FK_Empleado_EmpCatEmpleado">
+            <End Role="EmpCatEmpleado" EntitySet="EmpCatEmpleado" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_EmpCatLicencia" Association="Self.FK_Empleado_EmpCatLicencia">
+            <End Role="EmpCatLicencia" EntitySet="EmpCatLicencia" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_EmpCatPuesto" Association="Self.FK_Empleado_EmpCatPuesto">
+            <End Role="EmpCatPuesto" EntitySet="EmpCatPuesto" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_EmpCatSexo" Association="Self.FK_Empleado_EmpCatSexo">
+            <End Role="EmpCatSexo" EntitySet="EmpCatSexo" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_EmpCatStatus" Association="Self.FK_Empleado_EmpCatStatus">
+            <End Role="EmpCatStatus" EntitySet="EmpCatStatus" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Empleado" Association="Self.FK_Usuario_Empleado">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Unidades_UniCatAgencia" Association="Self.FK_Unidades_UniCatAgencia">
+            <End Role="UniCatAgencia" EntitySet="UniCatAgencia" />
+            <End Role="Unidades" EntitySet="Unidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Unidades_UniCatDisponibilidad" Association="Self.FK_Unidades_UniCatDisponibilidad">
+            <End Role="UniCatDisponibilidad" EntitySet="UniCatDisponibilidad" />
+            <End Role="Unidades" EntitySet="Unidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Unidades_UniCatEdoAgencia" Association="Self.FK_Unidades_UniCatEdoAgencia">
+            <End Role="UniCatEdoAgencia" EntitySet="UniCatEdoAgencia" />
+            <End Role="Unidades" EntitySet="Unidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Unidades_UniCatTipoUnidad" Association="Self.FK_Unidades_UniCatTipoUnidad">
+            <End Role="UniCatTipoUnidad" EntitySet="UniCatTipoUnidad" />
+            <End Role="Unidades" EntitySet="Unidades" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ManoAmigaModelStoreContainer" CdmEntityContainer="ManoAmigaEntities">
+          <EntitySetMapping Name="EmpCatCede">
+            <EntityTypeMapping TypeName="ManoAmigaModel.EmpCatCede">
+              <MappingFragment StoreEntitySet="EmpCatCede">
+                <ScalarProperty Name="idCede" ColumnName="idCede" />
+                <ScalarProperty Name="strValor" ColumnName="strValor" />
+                <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmpCatEmpleado">
+            <EntityTypeMapping TypeName="ManoAmigaModel.EmpCatEmpleado">
+              <MappingFragment StoreEntitySet="EmpCatEmpleado">
+                <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+                <ScalarProperty Name="strValor" ColumnName="strValor" />
+                <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmpCatLicencia">
+            <EntityTypeMapping TypeName="ManoAmigaModel.EmpCatLicencia">
+              <MappingFragment StoreEntitySet="EmpCatLicencia">
+                <ScalarProperty Name="idLicencia" ColumnName="idLicencia" />
+                <ScalarProperty Name="strValor" ColumnName="strValor" />
+                <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmpCatPuesto">
+            <EntityTypeMapping TypeName="ManoAmigaModel.EmpCatPuesto">
+              <MappingFragment StoreEntitySet="EmpCatPuesto">
+                <ScalarProperty Name="idPuesto" ColumnName="idPuesto" />
+                <ScalarProperty Name="strValor" ColumnName="strValor" />
+                <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmpCatSexo">
+            <EntityTypeMapping TypeName="ManoAmigaModel.EmpCatSexo">
+              <MappingFragment StoreEntitySet="EmpCatSexo">
+                <ScalarProperty Name="idSexo" ColumnName="idSexo" />
+                <ScalarProperty Name="strValor" ColumnName="strValor" />
+                <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmpCatStatus">
+            <EntityTypeMapping TypeName="ManoAmigaModel.EmpCatStatus">
+              <MappingFragment StoreEntitySet="EmpCatStatus">
+                <ScalarProperty Name="idStatus" ColumnName="idStatus" />
+                <ScalarProperty Name="strValor" ColumnName="strValor" />
+                <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleado">
+            <EntityTypeMapping TypeName="ManoAmigaModel.Empleado">
+              <MappingFragment StoreEntitySet="Empleado">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idCatEmpleado" ColumnName="idCatEmpleado" />
+                <ScalarProperty Name="strNombre" ColumnName="strNombre" />
+                <ScalarProperty Name="strApPaterno" ColumnName="strApPaterno" />
+                <ScalarProperty Name="strApMaterno" ColumnName="strApMaterno" />
+                <ScalarProperty Name="dteFechaContratacion" ColumnName="dteFechaContratacion" />
+                <ScalarProperty Name="idCatCede" ColumnName="idCatCede" />
+                <ScalarProperty Name="idCatSexo" ColumnName="idCatSexo" />
+                <ScalarProperty Name="idCatStatus" ColumnName="idCatStatus" />
+                <ScalarProperty Name="idCatPuesto" ColumnName="idCatPuesto" />
+                <ScalarProperty Name="boolCapacitaciones" ColumnName="boolCapacitaciones" />
+                <ScalarProperty Name="boolAntescedentes" ColumnName="boolAntescedentes" />
+                <ScalarProperty Name="boolINE" ColumnName="boolINE" />
+                <ScalarProperty Name="boolCurp" ColumnName="boolCurp" />
+                <ScalarProperty Name="boolLicencia" ColumnName="boolLicencia" />
+                <ScalarProperty Name="idCatLicencia" ColumnName="idCatLicencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ManoAmigaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UniCatAgencia">
+            <EntityTypeMapping TypeName="ManoAmigaModel.UniCatAgencia">
+              <MappingFragment StoreEntitySet="UniCatAgencia">
+                <ScalarProperty Name="idAseguradora" ColumnName="idAseguradora" />
+                <ScalarProperty Name="strValor" ColumnName="strValor" />
+                <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UniCatDisponibilidad">
+            <EntityTypeMapping TypeName="ManoAmigaModel.UniCatDisponibilidad">
+              <MappingFragment StoreEntitySet="UniCatDisponibilidad">
+                <ScalarProperty Name="idDisponibilidad" ColumnName="idDisponibilidad" />
+                <ScalarProperty Name="strValor" ColumnName="strValor" />
+                <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UniCatEdoAgencia">
+            <EntityTypeMapping TypeName="ManoAmigaModel.UniCatEdoAgencia">
+              <MappingFragment StoreEntitySet="UniCatEdoAgencia">
+                <ScalarProperty Name="idEstadoAgencia" ColumnName="idEstadoAgencia" />
+                <ScalarProperty Name="strValor" ColumnName="strValor" />
+                <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UniCatTipoUnidad">
+            <EntityTypeMapping TypeName="ManoAmigaModel.UniCatTipoUnidad">
+              <MappingFragment StoreEntitySet="UniCatTipoUnidad">
+                <ScalarProperty Name="idTipoUnidad" ColumnName="idTipoUnidad" />
+                <ScalarProperty Name="strValor" ColumnName="strValor" />
+                <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Unidades">
+            <EntityTypeMapping TypeName="ManoAmigaModel.Unidades">
+              <MappingFragment StoreEntitySet="Unidades">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="straNoPlacas" ColumnName="straNoPlacas" />
+                <ScalarProperty Name="strModelo" ColumnName="strModelo" />
+                <ScalarProperty Name="strMarca" ColumnName="strMarca" />
+                <ScalarProperty Name="idCatTipoUnidad" ColumnName="idCatTipoUnidad" />
+                <ScalarProperty Name="idCatEdoAgencia" ColumnName="idCatEdoAgencia" />
+                <ScalarProperty Name="idCatAseguradora" ColumnName="idCatAseguradora" />
+                <ScalarProperty Name="idCatDisponibilidad" ColumnName="idCatDisponibilidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="ManoAmigaModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+                <ScalarProperty Name="strNombreUsuario" ColumnName="strNombreUsuario" />
+                <ScalarProperty Name="strPassword" ColumnName="strPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
